@@ -4,21 +4,21 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sumitkur/gcpterraform.git']]])            
+            checkout([$class: 'GitSCM', branches: [[name: '*/core']], extensions: [], userRemoteConfigs: [[credentialsId: '8b5bbcbd-7c63-4223-82b3-db79490c91ee', url: 'https://github.com/Sumitkur/terraform02.git']]])           
 
           }
         }
         
         stage ("terraform init") {
             steps {
-                sh ('terraform init') 
+                powershell 'terraform init'
             }
         }
         
         stage ("terraform Action") {
             steps {
                 echo "Terraform action is --> ${action}"
-                sh ('terraform ${action} --auto-approve') 
+                powershell 'terraform ${action} --auto-approve'
            }
         }
     }
