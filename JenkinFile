@@ -18,13 +18,14 @@ pipeline {
         
         stage ("terraform Action") {
             steps {
-                echo "hello"
+                powershell 'cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\terraform01'
                 powershell 'terraform plan'
            }
         }
         
         stage ("terraform apply") {
             steps {
+                powershell 'cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\terraform01'
                 powershell 'terraform apply --auto-approve'
             }
         }
