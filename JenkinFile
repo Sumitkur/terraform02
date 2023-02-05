@@ -11,6 +11,7 @@ pipeline {
         
         stage ("terraform init") {
             steps {
+                powershell 'cd .\terraform01\'
                 powershell 'terraform init'
             }
         }
