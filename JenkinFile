@@ -17,8 +17,8 @@ pipeline {
         
         stage ("terraform Action") {
             steps {
-                echo "Terraform action is --> ${action}"
-                powershell 'terraform ${action} --auto-approve'
+                echo "hello"
+                powershell 'terraform apply --auto-approve'
            }
         }
     }
