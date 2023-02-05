@@ -11,7 +11,7 @@ pipeline {
         
         stage ("terraform init") {
             steps {
-                powershell 'cd terraform01'
+                powershell 'cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\terraform01'
                 powershell 'terraform init'
             }
         }
