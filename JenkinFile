@@ -18,8 +18,14 @@ pipeline {
         stage ("terraform Action") {
             steps {
                 echo "hello"
-                powershell 'terraform apply --auto-approve'
+                powershell 'terraform plan'
            }
+        }
+        
+        stage ("terraform apply") {
+            steps {
+                powershell 'terraform apply --auto-approve'
+            }
         }
     }
 }
