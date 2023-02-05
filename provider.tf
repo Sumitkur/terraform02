@@ -1,6 +1,6 @@
 provider "google" {
 
-#credentials = file("C:\\Users\\kursu\\Downloads\\my-project-01-374903-7676ff70125e.json")
+credentials = file("C:\\Users\\kursu\\Downloads\\my-project-01-374903-7676ff70125e.json")
 project = var.project_id
 region  = var.region
 }
